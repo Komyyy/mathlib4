@@ -1,4 +1,5 @@
-import Mathlib
+module
+public import Mathlib
 
 -- https://github.com/leanprover-community/mathlib4/pull/17557#issuecomment-2426920648
 

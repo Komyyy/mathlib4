@@ -1,4 +1,5 @@
-import Mathlib
+module
+public import Mathlib
 
 variable {K : Type*} [Field K] {x : K}
 

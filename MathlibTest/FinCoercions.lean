@@ -3,7 +3,8 @@
 -- Such coercions introduce unexpected invisible wrap-around arithmetic.
 -- `open Fin.CommRing ...` *does* introduce such a coercion.
 
-import Mathlib
+module
+public import Mathlib
 
 set_option pp.mvars false
 

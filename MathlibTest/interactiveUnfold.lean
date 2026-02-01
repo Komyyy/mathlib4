@@ -3,7 +3,8 @@ Copyright (c) 2024 Jovan Gerbscheid. All rights reserved.
 Released under Apache 2.0 license as described in the file LICENSE.
 Authors: Jovan Gerbscheid
 -/
-import Mathlib
+module
+public import Mathlib
 
 /-!
 The `unfold?` tactic is used interactively, so it is tricky to test directly.

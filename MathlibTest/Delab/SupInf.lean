@@ -1,4 +1,5 @@
-import Mathlib
+module
+public import Mathlib
 
 
 /-- info: max 1 2 : ℕ -/

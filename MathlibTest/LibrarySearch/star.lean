@@ -1,4 +1,5 @@
-import Mathlib
+module
+public import Mathlib
 
 /-!
 Test that `exact?` now also tries all un-indexable lemmas in a second pass.
