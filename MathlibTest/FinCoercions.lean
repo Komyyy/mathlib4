@@ -4,7 +4,7 @@
 -- `open Fin.CommRing ...` *does* introduce such a coercion.
 
 module
-public import Mathlib
+import Mathlib
 
 set_option pp.mvars.anonymous false
 

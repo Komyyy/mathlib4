@@ -1,5 +1,5 @@
 module
-public import Mathlib
+import Mathlib
 
 namespace Set
 

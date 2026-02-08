@@ -4,7 +4,7 @@ Released under Apache 2.0 license as described in the file LICENSE.
 Authors: Jovan Gerbscheid
 -/
 module
-public import Mathlib
+import Mathlib
 
 /-!
 The `unfold?` tactic is used interactively, so it is tricky to test directly.

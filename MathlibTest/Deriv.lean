@@ -1,5 +1,5 @@
 module
-public import Mathlib
+import Mathlib
 
 /-! Test that `simp` can prove some lemmas about derivatives. -/
 
