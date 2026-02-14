@@ -447,6 +447,13 @@ lemma differentiable_completedCosZeta₀ (a : UnitAddCircle) :
     Differentiable ℂ (completedCosZeta₀ a) :=
   ((hurwitzEvenFEPair a).symm.differentiable_Λ₀.comp (differentiable_id.div_const _)).div_const _
 
+attribute [fun_prop] MeromorphicAt.comp_analyticAt
+
+@[fun_prop]
+lemma meromorphicAt_completedHurwitzZetaEven (a s) :
+    MeromorphicAt (completedHurwitzZetaEven a) s := by
+  unfold completedHurwitzZetaEven; fun_prop
+
 private lemma tendsto_div_two_punctured_nhds (a : ℂ) :
     Tendsto (fun s : ℂ ↦ s / 2) (𝓝[≠] a) (𝓝[≠] (a / 2)) :=
   le_of_eq ((Homeomorph.mulRight₀ _ (inv_ne_zero (two_ne_zero' ℂ))).map_punctured_nhds_eq a)
