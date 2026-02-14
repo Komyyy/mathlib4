@@ -3,10 +3,11 @@ Copyright (c) 2025 Miyahara Kō. All rights reserved.
 Released under Apache 2.0 license as described in the file LICENSE.
 Authors: Miyahara Kō
 -/
+module
 
-import Mathlib.Analysis.CStarAlgebra.Classes
-import Mathlib.Analysis.Meromorphic.NormalForm
-import Mathlib.NumberTheory.LSeries.RiemannZeta
+public import Mathlib.Analysis.CStarAlgebra.Classes
+public import Mathlib.Analysis.Meromorphic.NormalForm
+public import Mathlib.NumberTheory.LSeries.RiemannZeta
 
 /-!
 # Meromorphic complex functions
@@ -19,9 +20,11 @@ import Mathlib.NumberTheory.LSeries.RiemannZeta
 -/
 
 
-open Set Complex Filter Function HurwitzZeta
-
 open scoped Topology
+
+public section
+
+open Set Complex Filter Function HurwitzZeta
 
 lemma Complex.meromorphicAt_of_differentiable_on_punctured_nhds_of_exists_tendsto_sub_pow_smul
     {E : Type*} [NormedAddCommGroup E] [NormedSpace ℂ E] [CompleteSpace E]
@@ -42,9 +45,13 @@ lemma MeromorphicNFOn.Gamma : MeromorphicNFOn Gamma univ :=
   meromorphicNFOn_inv.mp <| AnalyticOnNhd.meromorphicNFOn <|
     analyticOnNhd_univ_iff_differentiable.mpr differentiable_one_div_Gamma
 
-/-- The Gamma function is meromorphic. -/
-lemma MeromorphicOn.Gamma : MeromorphicOn Gamma univ :=
-  MeromorphicNFOn.Gamma.meromorphicOn
+-- TODO: restate `MeromorphicNFOn.Gamma` when `MeromorphicNF` is defined
+
+lemma Meromorphic.Gamma : Meromorphic Gamma :=
+  meromorphicOn_univ.mp MeromorphicNFOn.Gamma.meromorphicOn
+
+lemma MeromorphicOn.Gamma {s} : MeromorphicOn Gamma s :=
+  Meromorphic.Gamma.meromorphicOn
 
 /-- The Hurwitz zeta function is meromorphic. -/
 lemma MeromorphicOn.hurwitzZeta (a : UnitAddCircle) : MeromorphicOn (hurwitzZeta a) univ := by
